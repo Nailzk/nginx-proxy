@@ -1,6 +1,6 @@
 services: 
   nginx:
-    image: nginx-server:latest
+    image: nailz2k/nginx-server
     container_name: nginx
     ports:
         - 80:80
@@ -8,12 +8,12 @@ services:
     links:
         - emails
   emails:
-    image: emails:latest
+    image: nailz2k/emails
     container_name: emails
     ports:
         - 3003:3003
   client:
-    image: client:latest
+    image: nailz2k/client
     container_name: client
     ports:
         - 4200:4200
