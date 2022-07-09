@@ -1,0 +1,19 @@
+services: 
+  nginx:
+    image: nginx-server:latest
+    container_name: nginx
+    ports:
+        - 80:80
+        - 443:443
+    links:
+        - emails
+  emails:
+    image: emails:latest
+    container_name: emails
+    ports:
+        - 3003:3003
+  client:
+    image: client:latest
+    container_name: client
+    ports:
+        - 4200:4200
